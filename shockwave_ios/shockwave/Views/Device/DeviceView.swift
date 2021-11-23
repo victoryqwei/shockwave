@@ -57,6 +57,7 @@ struct DeviceView: View {
 //                    Text("Speed")
 //                    Slider(value: $viewModel.state.speed, in: 0...1)
 //                }
+                Text(viewModel.state.command)
             }
         }
         else {

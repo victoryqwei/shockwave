@@ -10,7 +10,6 @@
 		E6DA22ED274D59E800D88313 /* shockwaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA22EC274D59E800D88313 /* shockwaveApp.swift */; };
 		E6DA22EF274D59E800D88313 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA22EE274D59E800D88313 /* ContentView.swift */; };
 		E6DA22F1274D59EA00D88313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DA22F0274D59EA00D88313 /* Assets.xcassets */; };
-		E6DA22F4274D59EA00D88313 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DA22F3274D59EA00D88313 /* Preview Assets.xcassets */; };
 		E6DA22FD274D704A00D88313 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA22FC274D704A00D88313 /* ContentViewModel.swift */; };
 		E6DA2304274D711400D88313 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2303274D711400D88313 /* Set+Cancellable.swift */; };
 		E6DA2306274D713500D88313 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2305274D713500D88313 /* BluetoothManager.swift */; };
@@ -27,7 +26,6 @@
 		E6DA22EC274D59E800D88313 /* shockwaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shockwaveApp.swift; sourceTree = "<group>"; };
 		E6DA22EE274D59E800D88313 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E6DA22F0274D59EA00D88313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6DA22F3274D59EA00D88313 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6DA22FC274D704A00D88313 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		E6DA2303274D711400D88313 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
 		E6DA2305274D713500D88313 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
@@ -74,17 +72,8 @@
 				E6DA2301274D70CF00D88313 /* Models */,
 				E6DA2300274D70A300D88313 /* Views */,
 				E6DA22F0274D59EA00D88313 /* Assets.xcassets */,
-				E6DA22F2274D59EA00D88313 /* Preview Content */,
 			);
 			path = shockwave;
-			sourceTree = "<group>";
-		};
-		E6DA22F2274D59EA00D88313 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				E6DA22F3274D59EA00D88313 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		E6DA22FB274D5A1100D88313 /* Content */ = {
@@ -200,7 +189,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6DA22F4274D59EA00D88313 /* Preview Assets.xcassets in Resources */,
 				E6DA22F1274D59EA00D88313 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

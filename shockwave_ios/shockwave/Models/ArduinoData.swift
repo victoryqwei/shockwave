@@ -3,7 +3,7 @@
 import Foundation
 import CoreGraphics
 
-// https://github.com/madhead/saberlight/blob/master/protocols/Triones/protocol.md).
+// https://github.com/madhead/saberlight/blob/master/protocols/Triones/protocol.md
 struct ArduinoData {
 //    enum ArduinoDataError: Error {
 //        case noColorComponents
