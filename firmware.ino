@@ -48,7 +48,7 @@ void set_level(int m, int v) {
     shock_level = v;
   }
 
-  Serial.println(abs(level - v));
+  Serial.println( abs(level - v));
 
   for (int i = 0; i < abs(level - v); i++) {
     if (v > level) {
@@ -90,73 +90,36 @@ void setup() {
 
 
 void loop() {
+  String string;
+  
   if (bluetoothSerial.available()) {
-    incomingByte = bluetoothSerial.read();
-    Serial.println(incomingByte);
-    
-    if (incomingByte == 'v') {
-      digitalWrite(VIBRATE_PIN, HIGH); // sets the digital pin 13 on
-      delay(200);            // waits for a second
-      digitalWrite(VIBRATE_PIN, LOW);  // sets the digital pin 13 off
-    }
-    if (incomingByte == 's') {
-      digitalWrite(SHOCK_PIN, HIGH); // sets the digital pin 13 on
-      delay(200);            // waits for a second
-      digitalWrite(SHOCK_PIN, LOW);  // sets the digital pin 13 off
-    }
+    string = bluetoothSerial.readString();
   }
-  if (Serial.available() > 0) {
-    String string = Serial.readString();
-
-    int l = string.length();
-    
-    Serial.println(string);
-
-    if (l == 1) {
-      if (string == "v") {
-        press_button(VIBRATE_PIN, 50);
-      } else if (string == "s") {
-        press_button(SHOCK_PIN, 50);
-      } else if (string == "m") {
-        digitalWrite(modePin, HIGH); // sets the digital pin 13 on
-        delay(2000);            // waits for a second
-        digitalWrite(modePin, LOW);  // sets the digital pin 13 off
-      } else if (string == "r") {
-        setup_remote();
-      }
-    } else if (l == 2)  {
-      if (string[0] == 'v') {
-        set_level(0, string[1]);
-      } else if (string[0] == 's') {
-        set_level(1, string[1]);
-      }
-    }
+  if (Serial.available()) {
+    string = Serial.readString();
   }
-  incomingByte = Serial.read();
-//      if (incomingByte == 'v') {
-//        digitalWrite(VIBRATE_PIN, HIGH); // sets the digital pin 13 on
-//        delay(200);            // waits for a second
-//        digitalWrite(VIBRATE_PIN, LOW);  // sets the digital pin 13 off
-//      }
-//      if (incomingByte == 's') {
-//        digitalWrite(SHOCK_PIN, HIGH); // sets the digital pin 13 on
-//        delay(200);            // waits for a second
-//        digitalWrite(SHOCK_PIN, LOW);  // sets the digital pin 13 off
-//      }
-//  
-//      if (incomingByte == 'u') {
-//        digitalWrite(upPin, HIGH); // sets the digital pin 13 on
-//        delay(200);            // waits for a second
-//        digitalWrite(upPin, LOW);  // sets the digital pin 13 off
-//      }
-//      if (incomingByte == 'd') {
-//        digitalWrite(downPin, HIGH); // sets the digital pin 13 on
-//        delay(200);            // waits for a second
-//        digitalWrite(downPin, LOW);  // sets the digital pin 13 off
-//      }
-//      if (incomingByte == 'm') {
-//        digitalWrite(modePin, HIGH); // sets the digital pin 13 on
-//        delay(2000);            // waits for a second
-//        digitalWrite(modePin, LOW);  // sets the digital pin 13 off
-//      }
+  
+  int l = string.length();
+    
+  Serial.println(string);
+
+  if (l == 1) {
+    if (string == "v") {
+      press_button(VIBRATE_PIN, 50);
+    } else if (string == "s") {
+      press_button(SHOCK_PIN, 50);
+    } else if (string == "m") {
+      digitalWrite(modePin, HIGH); // sets the digital pin 13 on
+      delay(2000);            // waits for a second
+      digitalWrite(modePin, LOW);  // sets the digital pin 13 off
+    } else if (string == "r") {
+      setup_remote();
+    }
+  } else if (l == 2)  {
+    if (string[0] == 'v') {
+      set_level(0, string[1]);
+    } else if (string[0] == 's') {
+      set_level(1, string[1]);
+    }
+  }  
 }
