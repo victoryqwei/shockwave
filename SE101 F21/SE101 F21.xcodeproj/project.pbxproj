@@ -14,7 +14,6 @@
 		D3BD721D274D49AD00FF10A6 /* SE101_F21App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD71F5274D49AC00FF10A6 /* SE101_F21App.swift */; };
 		D3BD721E274D49AD00FF10A6 /* SE101_F21App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD71F5274D49AC00FF10A6 /* SE101_F21App.swift */; };
 		D3BD721F274D49AD00FF10A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD71F6274D49AC00FF10A6 /* ContentView.swift */; };
-		D3BD7220274D49AD00FF10A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD71F6274D49AC00FF10A6 /* ContentView.swift */; };
 		D3BD7221274D49AD00FF10A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BD71F7274D49AD00FF10A6 /* Assets.xcassets */; };
 		D3BD7222274D49AD00FF10A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BD71F7274D49AD00FF10A6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -308,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BD7220274D49AD00FF10A6 /* ContentView.swift in Sources */,
 				D3BD721E274D49AD00FF10A6 /* SE101_F21App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
