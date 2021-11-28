@@ -2,6 +2,7 @@
 
 import CoreBluetooth
 import Combine
+import UIKit
 
 final class DeviceViewModel: ObservableObject {
     @Published var isReady = false
@@ -63,21 +64,19 @@ final class DeviceViewModel: ObservableObject {
     }
 
     private func update(_ state: ArduinoState) {
-//        let onPublisher = state.$isOn
-//            .map { ArduinoData.powerData(isOn: $0) }
-//
-//        let colorPublisher = state.$color
-//            .compactMap { try? ArduinoData.staticColorData(from: $0) }
-//
-//        let modePublisher = state.$mode
-//            .compactMap { $0 }
-//            .combineLatest(state.$speed)
-//            .map { ArduinoData.modeData(with: $0, speed: $1) }
-//
-//        onPublisher.merge(with: colorPublisher, modePublisher)
-//            .dropFirst(3)
-//            .sink { [weak self] in self?.write($0) }
-//            .store(in: &cancellables)
+        let modePublisher = state.$mode
+            .map { ArduinoData.modeData(mode: $0!)}
+        
+        let shockPublisher = state.$shockLevel
+            .map { ArduinoData.shockData(shockLevel: $0) }
+        
+        let vibratePublisher = state.$vibrateLevel
+            .map { ArduinoData.vibrateData(vibrateLevel: $0) }
+        
+        modePublisher.merge(with: shockPublisher, vibratePublisher)
+            .sink { [weak self] in self?.write($0) }
+            .store(in: &cancellables)
+        
         self.state = state
         self.isReady = true
     }
@@ -97,3 +96,19 @@ func ==<Root, Value: Equatable>(lhs: KeyPath<Root, Value>, rhs: Value) -> (Root)
 func ==<Root, Value: Equatable>(lhs: KeyPath<Root, Value>, rhs: Value?) -> (Root) -> Bool {
     { $0[keyPath: lhs] == rhs }
 }
+
+//        let onPublisher = state.$isOn
+//            .map { ArduinoData.powerData(isOn: $0) }
+//
+//        let colorPublisher = state.$color
+//            .compactMap { try? ArduinoData.staticColorData(from: $0) }
+//
+//        let modePublisher = state.$mode
+//            .compactMap { $0 }
+//            .combineLatest(state.$speed)
+//            .map { ArduinoData.modeData(with: $0, speed: $1) }
+//
+//        onPublisher.merge(with: colorPublisher, modePublisher)
+//            .dropFirst(3)
+//            .sink { [weak self] in self?.write($0) }
+//            .store(in: &cancellables)

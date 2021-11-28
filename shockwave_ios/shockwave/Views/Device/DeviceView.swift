@@ -5,7 +5,6 @@ import CoreBluetooth
 
 struct DeviceView: View {
     @StateObject private var viewModel: DeviceViewModel
-    @State private var modeSelectionIsPresented = false
     @State private var didAppear = false
 
     //MARK: - Lifecycle
@@ -24,6 +23,40 @@ struct DeviceView: View {
                 didAppear = true
                 viewModel.connect()
             }
+    }
+
+    //MARK: - Private
+    
+    @ViewBuilder
+    private func content() -> some View {
+        if viewModel.isReady {
+            List {
+                Button("Shock") {
+                    viewModel.state.mode = .shock
+                    viewModel.state.mode = .off
+                }.foregroundColor(.accentColor)
+                Button("Vibrate") {
+                    viewModel.state.mode = .vibrate
+                    viewModel.state.mode = .off
+                }.foregroundColor(.accentColor)
+                HStack {
+                    Stepper("Shock level", value: $viewModel.state.shockLevel, in: 1...8, step: 1)
+                    Text("\(viewModel.state.shockLevel)")
+                }
+                HStack {
+                    Stepper("Vibrate level", value: $viewModel.state.vibrateLevel, in: 1...8, step: 1)
+                    Text("\(viewModel.state.vibrateLevel)")
+                }
+            }
+        }
+        else {
+            Text("Not connected...")
+        }
+    }
+}
+
+//    @State private var modeSelectionIsPresented = false
+
 //            .actionSheet(isPresented: $modeSelectionIsPresented) {
 //                var buttons: [ActionSheet.Button] = ArduinoData.Mode.allCases.map { mode in
 //                    ActionSheet.Button.default(Text("\(mode.title)")) {
@@ -33,15 +66,9 @@ struct DeviceView: View {
 //                buttons.append(.cancel())
 //                return ActionSheet(title: Text("Select Mode"), message: nil, buttons: buttons)
 //            }
-    }
 
-    //MARK: - Private
-    
-    @ViewBuilder
-    private func content() -> some View {
-        if viewModel.isReady {
-            List {
-                TextField("Enter command", text: $viewModel.state.command)
+//                        modeSelectionIsPresented.toggle()
+
 //                Toggle("On", isOn: $viewModel.state.isOn)
 //                ColorPicker("Change Arduino color",
 //                            selection: $viewModel.state.color,
@@ -57,11 +84,3 @@ struct DeviceView: View {
 //                    Text("Speed")
 //                    Slider(value: $viewModel.state.speed, in: 0...1)
 //                }
-                Text(viewModel.state.command)
-            }
-        }
-        else {
-            Text("Not connected...")
-        }
-    }
-}

@@ -9,7 +9,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             content()
-                .navigationTitle(viewModel.peripheral?.name ?? "ShockWave")
+                .navigationTitle("ShockWave")
+            //viewModel.peripheral?.name ??
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: add) {

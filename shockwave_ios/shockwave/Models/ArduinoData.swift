@@ -2,9 +2,63 @@
 
 import Foundation
 import CoreGraphics
+import UniformTypeIdentifiers
+
+struct ArduinoData {
+    static func modeData(mode: Mode) -> Data {
+        let output = mode.rawValue
+        return output.data(using: .utf8)!
+    }
+    
+    static func shockData(shockLevel: Int) -> Data {
+        let output = "s" + String(Int(shockLevel))
+        return output.data(using: .utf8)!
+    }
+    
+    static func vibrateData(vibrateLevel: Int) -> Data {
+        let output = "v" + String(Int(vibrateLevel))
+        return output.data(using: .utf8)!
+    }
+
+    static func state(from data: Data?) -> ArduinoState {
+        let state = ArduinoState()
+        
+//        guard let data = data else {
+//            return state
+//        }
+        
+//        let values = data
+//        if let mode = Mode(rawValue: String(values[0])) {
+//            state.mode = mode
+//        }
+//        state.shockLevel = Int(String(values[1]).suffix(1))!
+//        state.vibrateLevel = Int(String(values[2]).suffix(1))!
+        
+        return state
+    }
+}
+
+extension ArduinoData {
+    enum Mode: String, CaseIterable {
+        case off = ""
+        case shock = "s"
+        case vibrate = "v"
+        
+        var title: String {
+            switch self {
+            case .off:
+                return "Off"
+            case .shock:
+                return "Shock"
+            case .vibrate:
+                return "Vibrate"
+            }
+        }
+    }
+}
 
 // https://github.com/madhead/saberlight/blob/master/protocols/Triones/protocol.md
-struct ArduinoData {
+
 //    enum ArduinoDataError: Error {
 //        case noColorComponents
 //    }
@@ -27,8 +81,6 @@ struct ArduinoData {
 //        Data([0xBB, mode.rawValue, UInt8((1 - speed) * 255), 0x44])
 //    }
 
-    static func state(from data: Data?) -> ArduinoState {
-        let state = ArduinoState()
 //        guard let data = data else {
 //            return state
 //        }
@@ -42,9 +94,6 @@ struct ArduinoData {
 //            state.mode = mode
 //        }
 //        state.speed = Float(values[5])
-        return state
-    }
-}
 
 //extension ArduinoData {
 //
