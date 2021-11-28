@@ -48,8 +48,7 @@ void set_level(int m, int v) {
     shock_level = v;
   }
 
-
-  Serial.println( abs(level - v));
+  Serial.println(abs(level - v));
 
   for (int i = 0; i < abs(level - v); i++) {
     if (v > level) {
@@ -89,40 +88,11 @@ void setup() {
   setup_remote();
 }
 
-char c;
-
-
-
-uint8_t character;
-char character2;
-uint8_t character3;
-int character4;
-unsigned char character5;
-String message;
-String string;
-
 
 void loop() {
   if (bluetoothSerial.available()) {
-    character = bluetoothSerial.read();
-    character2 = (char) character;
-    string = bluetoothSerial.readString();
-    message.concat(character);
-    Serial.println("Received message");
-    Serial.println(character);
-    Serial.println(character2);
-    Serial.println(character3);
-    Serial.println(character4);
-    Serial.println(character5);
-    Serial.println(string);
-    Serial.println("String: " + message);
-    Serial.println();
-
-    if (character == '#'){ // if end of message received
-       Serial.print(message); //display message and
-       message = ""; //clear buffer
-       Serial.println();
-    }
+    incomingByte = bluetoothSerial.read();
+    Serial.println(incomingByte);
     
     if (incomingByte == 'v') {
       digitalWrite(VIBRATE_PIN, HIGH); // sets the digital pin 13 on
@@ -134,10 +104,6 @@ void loop() {
       delay(200);            // waits for a second
       digitalWrite(SHOCK_PIN, LOW);  // sets the digital pin 13 off
     }
-//    Serial.println((char) incomingByte);
-//    Serial.println(incomingByte);
-//    Serial.println((int) incomingByte);
-//    Serial.println(string);
   }
   if (Serial.available() > 0) {
     String string = Serial.readString();
@@ -166,14 +132,7 @@ void loop() {
       }
     }
   }
-
-  // v, s
-  // v1, s3
-
-
-
-
-      incomingByte = Serial.read();
+  incomingByte = Serial.read();
 //      if (incomingByte == 'v') {
 //        digitalWrite(VIBRATE_PIN, HIGH); // sets the digital pin 13 on
 //        delay(200);            // waits for a second
