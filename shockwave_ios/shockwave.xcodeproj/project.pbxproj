@@ -19,6 +19,7 @@
 		E6DA230E274D717A00D88313 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA230D274D717A00D88313 /* DeviceViewModel.swift */; };
 		E6DA2310274D718300D88313 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA230F274D718300D88313 /* DeviceView.swift */; };
 		E6DA2312274D718E00D88313 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2311274D718E00D88313 /* DevicesView.swift */; };
+		E6E2159727542D500082EAA6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E2159627542D500082EAA6 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E6DA230D274D717A00D88313 /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
 		E6DA230F274D718300D88313 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		E6DA2311274D718E00D88313 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		E6E2159627542D500082EAA6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		E6DA2300274D70A300D88313 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E6E2159627542D500082EAA6 /* SwiftUIView.swift */,
 				E6DA22FB274D5A1100D88313 /* Content */,
 				E6DA22FF274D709700D88313 /* Device */,
 				E6DA22FE274D707C00D88313 /* Devices */,
@@ -202,6 +205,7 @@
 			files = (
 				E6DA2312274D718E00D88313 /* DevicesView.swift in Sources */,
 				E6DA230C274D717200D88313 /* DevicesViewModel.swift in Sources */,
+				E6E2159727542D500082EAA6 /* SwiftUIView.swift in Sources */,
 				E6DA22EF274D59E800D88313 /* ContentView.swift in Sources */,
 				E6DA2310274D718300D88313 /* DeviceView.swift in Sources */,
 				E6DA230A274D715C00D88313 /* ArduinoData.swift in Sources */,
