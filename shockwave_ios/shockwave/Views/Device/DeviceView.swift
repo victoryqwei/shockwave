@@ -30,24 +30,25 @@ struct DeviceView: View {
     @ViewBuilder
     private func content() -> some View {
         if viewModel.isReady {
-            List {
-                Button("Shock") {
-                    viewModel.state.mode = .shock
-                    viewModel.state.mode = .off
-                }.foregroundColor(.accentColor)
-                Button("Vibrate") {
-                    viewModel.state.mode = .vibrate
-                    viewModel.state.mode = .off
-                }.foregroundColor(.accentColor)
-                HStack {
-                    Stepper("Shock level", value: $viewModel.state.shockLevel, in: 1...8, step: 1)
-                    Text("\(viewModel.state.shockLevel)")
-                }
-                HStack {
-                    Stepper("Vibrate level", value: $viewModel.state.vibrateLevel, in: 1...8, step: 1)
-                    Text("\(viewModel.state.vibrateLevel)")
-                }
-            }
+//            List {
+//                Button("Shock") {
+//                    viewModel.state.mode = .shock
+//                    viewModel.state.mode = .off
+//                }.foregroundColor(.accentColor)
+//                Button("Vibrate") {
+//                    viewModel.state.mode = .vibrate
+//                    viewModel.state.mode = .off
+//                }.foregroundColor(.accentColor)
+//                HStack {
+//                    Stepper("Shock level", value: $viewModel.state.shockLevel, in: 1...8, step: 1)
+//                    Text("\(viewModel.state.shockLevel)")
+//                }
+//                HStack {
+//                    Stepper("Vibrate level", value: $viewModel.state.vibrateLevel, in: 1...8, step: 1)
+//                    Text("\(viewModel.state.vibrateLevel)")
+//                }
+//            }
+            SwiftUIView(shockLevel: $viewModel.state.shockLevel, vibrateLevel: $viewModel.state.vibrateLevel)
         }
         else {
             Text("Not connected...")

@@ -10,15 +10,14 @@ struct ContentView: View {
         NavigationView {
             content()
                 .navigationTitle("ShockWave")
-            //viewModel.peripheral?.name ??
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: add) {
-                            Image(systemName: "plus")
-                        }
-                        .disabled(viewModel.state != .poweredOn)
-                    }
-                }
+//                .toolbar {
+//                    ToolbarItem(placement: .navigationBarTrailing) {
+//                        Button(action: add) {
+//                            Image(systemName: "wave.3.right")
+//                        }
+//                        .disabled(viewModel.state != .poweredOn)
+//                    }
+//                }
         }
         .onAppear {
             viewModel.start()

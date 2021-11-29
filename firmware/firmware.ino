@@ -90,28 +90,26 @@ void setup() {
 
 
 void parse_string(String string) {
-  int l = string.length();
-      
-    Serial.println(string);
-  
-    if (l == 1) {
-      if (string == "v") {
+  string = string.substring(string.length() - 2);
+  Serial.println(string);
+    if (string[0] == 'v') {
+      if (string[1] == 'v') {
         press_button(VIBRATE_PIN, 50);
-      } else if (string == "s") {
-        press_button(SHOCK_PIN, 50);
-      } else if (string == "m") {
-        digitalWrite(modePin, HIGH); // sets the digital pin 13 on
-        delay(2000);            // waits for a second
-        digitalWrite(modePin, LOW);  // sets the digital pin 13 off
-      } else if (string == "r") {
-        setup_remote();
-      }
-    } else if (l == 2)  {
-      if (string[0] == 'v') {
+      } else {
         set_level(0, string[1]);
-      } else if (string[0] == 's') {
+      }
+    } else if (string[0] == 's') {
+      if (string[1] == 's') {
+        press_button(SHOCK_PIN, 50);
+      } else {
         set_level(1, string[1]);
       }
+    } else if (string == "mm") {
+      digitalWrite(modePin, HIGH); // sets the digital pin 13 on
+      delay(2000);            // waits for a second
+      digitalWrite(modePin, LOW);  // sets the digital pin 13 off
+    } else if (string == "rr") {
+      setup_remote();
     }
 }
 

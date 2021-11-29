@@ -5,8 +5,8 @@ import CoreGraphics
 
 final class ArduinoState: ObservableObject {
     @Published var mode = ArduinoData.Mode(rawValue: "")
-    @Published var shockLevel = 1;
-    @Published var vibrateLevel = 1;
+    @Published var shockLevel: Double = 1;
+    @Published var vibrateLevel: Double = 1;
 }
 
 //    @Published var isOn = false

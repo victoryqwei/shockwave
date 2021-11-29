@@ -316,7 +316,8 @@ struct SwiftUIView: View {
     @State var minuteInput = 0
     @State var quitCount = 0
     
-    @State var shockLevel: Double = 50;
+    @State var shockLevel: Binding<Double>;
+    @State var vibrateLevel: Binding<Double>;
     @State var animationOpacity: Double = 0;
     
     @State var phonePickupCounter = 0;
@@ -507,10 +508,17 @@ struct SwiftUIView: View {
             Spacer()
             
             Text(!currentState ? "Enable Collar in Settings" : currentMode ? "Shock Level" : "Vibration Level")
-            Slider(value: $shockLevel, in: 0...100, step: 25) // Change step by how many levels of shock we have
-                .padding([.leading, .bottom, .trailing])
-                .opacity(currentState ? 1 : 0.25)
-                .disabled(!currentState);
+            if currentMode {
+                Slider(value: shockLevel, in: 1...8, step: 1) // Change step by how many levels of shock we have
+                    .padding([.leading, .bottom, .trailing])
+                    .opacity(currentState ? 1 : 0.25)
+                    .disabled(!currentState);
+            } else {
+                Slider(value: vibrateLevel, in: 1...8, step: 1) // Change step by how many levels of shock we have
+                    .padding([.leading, .bottom, .trailing])
+                    .opacity(currentState ? 1 : 0.25)
+                    .disabled(!currentState);
+            }
             
             HStack {
                 Button {

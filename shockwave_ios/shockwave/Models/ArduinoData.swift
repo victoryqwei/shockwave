@@ -6,16 +6,16 @@ import UniformTypeIdentifiers
 
 struct ArduinoData {
     static func modeData(mode: Mode) -> Data {
-        let output = mode.rawValue
+        let output = mode.rawValue + mode.rawValue
         return output.data(using: .utf8)!
     }
     
-    static func shockData(shockLevel: Int) -> Data {
+    static func shockData(shockLevel: Double) -> Data {
         let output = "s" + String(Int(shockLevel))
         return output.data(using: .utf8)!
     }
     
-    static func vibrateData(vibrateLevel: Int) -> Data {
+    static func vibrateData(vibrateLevel: Double) -> Data {
         let output = "v" + String(Int(vibrateLevel))
         return output.data(using: .utf8)!
     }
@@ -31,8 +31,8 @@ struct ArduinoData {
 //        if let mode = Mode(rawValue: String(values[0])) {
 //            state.mode = mode
 //        }
-//        state.shockLevel = Int(String(values[1]).suffix(1))!
-//        state.vibrateLevel = Int(String(values[2]).suffix(1))!
+//        state.shockLevel = Double(String(values[1]).suffix(1))!
+//        state.vibrateLevel = Double(String(values[2]).suffix(1))!
         
         return state
     }
