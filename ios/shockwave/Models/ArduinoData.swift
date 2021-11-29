@@ -28,6 +28,16 @@ struct ArduinoData {
         return output.data(using: .utf8)!
     }
     
+    static func isOnData(isOn: Bool, mode: Bool) -> Data {
+        var output = ""
+        if mode {
+            output = "s1"
+        } else {
+            output = "v1"
+        }
+        return output.data(using: .utf8)!
+    }
+    
     static func shockData(shockLevel: Double) -> Data {
         let output = "s" + String(Int(shockLevel))
         return output.data(using: .utf8)!

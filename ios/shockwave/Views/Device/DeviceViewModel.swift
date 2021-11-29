@@ -93,6 +93,10 @@ final class DeviceViewModel: ObservableObject {
             .combineLatest(state.$isOn, state.$mode)
             .map { ArduinoData.counterData(counter: $0, isOn: $1, mode: $2)}
         
+        let isOnPublisher = state.$isOn
+            .combineLatest(state.$mode)
+            .map { ArduinoData.isOnData(isOn: $0, mode: $1) }
+        
         let modePublisher = state.$mode
             .map { ArduinoData.modeData(mode: $0) }
         
@@ -102,7 +106,7 @@ final class DeviceViewModel: ObservableObject {
         let vibratePublisher = state.$vibrateLevel
             .map { ArduinoData.vibrateData(vibrateLevel: $0) }
         
-        counterPublisher.merge(with: modePublisher, shockPublisher, vibratePublisher)
+        counterPublisher.merge(with: isOnPublisher, modePublisher, shockPublisher, vibratePublisher)
             .sink { [weak self] in self?.write($0) }
             .store(in: &cancellables)
         
