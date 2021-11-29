@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6DA22ED274D59E800D88313 /* shockwaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA22EC274D59E800D88313 /* shockwaveApp.swift */; };
+		E6DA22EF274D59E800D88313 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA22EE274D59E800D88313 /* ContentView.swift */; };
+		E6DA22F1274D59EA00D88313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DA22F0274D59EA00D88313 /* Assets.xcassets */; };
+		E6DA22FD274D704A00D88313 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA22FC274D704A00D88313 /* ContentViewModel.swift */; };
+		E6DA2304274D711400D88313 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2303274D711400D88313 /* Set+Cancellable.swift */; };
+		E6DA2306274D713500D88313 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2305274D713500D88313 /* BluetoothManager.swift */; };
+		E6DA2308274D714F00D88313 /* ArduinoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2307274D714F00D88313 /* ArduinoState.swift */; };
+		E6DA230A274D715C00D88313 /* ArduinoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2309274D715C00D88313 /* ArduinoData.swift */; };
+		E6DA230C274D717200D88313 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA230B274D717200D88313 /* DevicesViewModel.swift */; };
+		E6DA230E274D717A00D88313 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA230D274D717A00D88313 /* DeviceViewModel.swift */; };
+		E6DA2310274D718300D88313 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA230F274D718300D88313 /* DeviceView.swift */; };
+		E6DA2312274D718E00D88313 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DA2311274D718E00D88313 /* DevicesView.swift */; };
+		E6E2159727542D500082EAA6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E2159627542D500082EAA6 /* SwiftUIView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E6DA22E9274D59E800D88313 /* shockwave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shockwave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6DA22EC274D59E800D88313 /* shockwaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shockwaveApp.swift; sourceTree = "<group>"; };
+		E6DA22EE274D59E800D88313 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E6DA22F0274D59EA00D88313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6DA22FC274D704A00D88313 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E6DA2303274D711400D88313 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
+		E6DA2305274D713500D88313 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		E6DA2307274D714F00D88313 /* ArduinoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArduinoState.swift; sourceTree = "<group>"; };
+		E6DA2309274D715C00D88313 /* ArduinoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArduinoData.swift; sourceTree = "<group>"; };
+		E6DA230B274D717200D88313 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
+		E6DA230D274D717A00D88313 /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		E6DA230F274D718300D88313 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		E6DA2311274D718E00D88313 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		E6E2159627542D500082EAA6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6DA22E6274D59E800D88313 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6DA22E0274D59E800D88313 = {
+			isa = PBXGroup;
+			children = (
+				E6DA22EB274D59E800D88313 /* shockwave */,
+				E6DA22EA274D59E800D88313 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6DA22EA274D59E800D88313 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA22E9274D59E800D88313 /* shockwave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6DA22EB274D59E800D88313 /* shockwave */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA22EC274D59E800D88313 /* shockwaveApp.swift */,
+				E6DA2302274D70E200D88313 /* Extensions */,
+				E6DA2301274D70CF00D88313 /* Models */,
+				E6DA2300274D70A300D88313 /* Views */,
+				E6DA22F0274D59EA00D88313 /* Assets.xcassets */,
+			);
+			path = shockwave;
+			sourceTree = "<group>";
+		};
+		E6DA22FB274D5A1100D88313 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA22EE274D59E800D88313 /* ContentView.swift */,
+				E6DA22FC274D704A00D88313 /* ContentViewModel.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		E6DA22FE274D707C00D88313 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA2311274D718E00D88313 /* DevicesView.swift */,
+				E6DA230B274D717200D88313 /* DevicesViewModel.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		E6DA22FF274D709700D88313 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA230F274D718300D88313 /* DeviceView.swift */,
+				E6DA230D274D717A00D88313 /* DeviceViewModel.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		E6DA2300274D70A300D88313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6E2159627542D500082EAA6 /* SwiftUIView.swift */,
+				E6DA22FB274D5A1100D88313 /* Content */,
+				E6DA22FF274D709700D88313 /* Device */,
+				E6DA22FE274D707C00D88313 /* Devices */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6DA2301274D70CF00D88313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA2309274D715C00D88313 /* ArduinoData.swift */,
+				E6DA2307274D714F00D88313 /* ArduinoState.swift */,
+				E6DA2305274D713500D88313 /* BluetoothManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E6DA2302274D70E200D88313 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E6DA2303274D711400D88313 /* Set+Cancellable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6DA22E8274D59E800D88313 /* shockwave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6DA22F7274D59EA00D88313 /* Build configuration list for PBXNativeTarget "shockwave" */;
+			buildPhases = (
+				E6DA22E5274D59E800D88313 /* Sources */,
+				E6DA22E6274D59E800D88313 /* Frameworks */,
+				E6DA22E7274D59E800D88313 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shockwave;
+			productName = shockwave;
+			productReference = E6DA22E9274D59E800D88313 /* shockwave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6DA22E1274D59E800D88313 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					E6DA22E8274D59E800D88313 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = E6DA22E4274D59E800D88313 /* Build configuration list for PBXProject "shockwave" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6DA22E0274D59E800D88313;
+			productRefGroup = E6DA22EA274D59E800D88313 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6DA22E8274D59E800D88313 /* shockwave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6DA22E7274D59E800D88313 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6DA22F1274D59EA00D88313 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6DA22E5274D59E800D88313 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6DA2312274D718E00D88313 /* DevicesView.swift in Sources */,
+				E6DA230C274D717200D88313 /* DevicesViewModel.swift in Sources */,
+				E6E2159727542D500082EAA6 /* SwiftUIView.swift in Sources */,
+				E6DA22EF274D59E800D88313 /* ContentView.swift in Sources */,
+				E6DA2310274D718300D88313 /* DeviceView.swift in Sources */,
+				E6DA230A274D715C00D88313 /* ArduinoData.swift in Sources */,
+				E6DA2304274D711400D88313 /* Set+Cancellable.swift in Sources */,
+				E6DA22ED274D59E800D88313 /* shockwaveApp.swift in Sources */,
+				E6DA22FD274D704A00D88313 /* ContentViewModel.swift in Sources */,
+				E6DA230E274D717A00D88313 /* DeviceViewModel.swift in Sources */,
+				E6DA2308274D714F00D88313 /* ArduinoState.swift in Sources */,
+				E6DA2306274D713500D88313 /* BluetoothManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E6DA22F5274D59EA00D88313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E6DA22F6274D59EA00D88313 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6DA22F8274D59EA00D88313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"shockwave/Preview Content\"";
+				DEVELOPMENT_TEAM = U3M54JVPNV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect with Arduino";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogjh.shockwave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6DA22F9274D59EA00D88313 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"shockwave/Preview Content\"";
+				DEVELOPMENT_TEAM = U3M54JVPNV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect with Arduino";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leogjh.shockwave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6DA22E4274D59E800D88313 /* Build configuration list for PBXProject "shockwave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6DA22F5274D59EA00D88313 /* Debug */,
+				E6DA22F6274D59EA00D88313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6DA22F7274D59EA00D88313 /* Build configuration list for PBXNativeTarget "shockwave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6DA22F8274D59EA00D88313 /* Debug */,
+				E6DA22F9274D59EA00D88313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6DA22E1274D59E800D88313 /* Project object */;
+}
