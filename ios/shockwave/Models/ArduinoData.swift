@@ -3,6 +3,7 @@
 import Foundation
 import CoreGraphics
 import UniformTypeIdentifiers
+import SwiftUI
 
 struct ArduinoData {
     static func counterData(counter: Int, isOn: Bool, mode: Bool) -> Data {
@@ -13,6 +14,16 @@ struct ArduinoData {
             } else {
                 output = "vv"
             }
+        }
+        return output.data(using: .utf8)!
+    }
+    
+    static func modeData(mode: Bool) -> Data {
+        var output = ""
+        if mode {
+            output = "s1"
+        } else {
+            output = "v1"
         }
         return output.data(using: .utf8)!
     }
