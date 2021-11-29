@@ -22,11 +22,24 @@ final class DeviceViewModel: ObservableObject {
     private let peripheral: CBPeripheral
     private var readCharacteristic: CBCharacteristic?
     private var writeCharacteristic: CBCharacteristic?
+    
+    private var proximityMonitoringAvailable = false
 
     //MARK: - Lifecycle
 
     init(peripheral: CBPeripheral) {
         self.peripheral = peripheral
+        
+        NotificationCenter.default.publisher(for: UIDevice.proximityStateDidChangeNotification)
+            .sink { (notification) in
+                guard let device = notification.object as? UIDevice else { return }
+
+                if device.proximityState {
+                    self.state.mode = .vibrate
+                    self.state.mode = .off
+                }
+            }
+            .store(in: &cancellables)
     }
 
     deinit {
@@ -61,6 +74,19 @@ final class DeviceViewModel: ObservableObject {
             .store(in: &cancellables)
 
         manager.connect(peripheral)
+    }
+    
+    func startMonitoring() {
+        UIDevice.current.isProximityMonitoringEnabled = true
+
+        guard UIDevice.current.isProximityMonitoringEnabled else {
+            print("Proximity monitoring unavailable")
+            return
+        }
+
+        proximityMonitoringAvailable = true
+
+        print("Enabled proximity monitoring")
     }
 
     private func update(_ state: ArduinoState) {

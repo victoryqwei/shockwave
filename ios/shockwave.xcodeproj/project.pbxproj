@@ -122,10 +122,10 @@
 		E6DA2300274D70A300D88313 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E6B9602F27546BF800A857C0 /* UI */,
 				E6DA22FB274D5A1100D88313 /* Content */,
 				E6DA22FF274D709700D88313 /* Device */,
 				E6DA22FE274D707C00D88313 /* Devices */,
+				E6B9602F27546BF800A857C0 /* UI */,
 			);
 			path = Views;
 			sourceTree = "<group>";

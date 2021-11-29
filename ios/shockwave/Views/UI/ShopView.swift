@@ -4,13 +4,13 @@ struct ShopView: View {
     @Environment(\.dismiss) var dismiss
     
     @Binding var credits: Int
-    @Binding var theme1Purchased: Bool;
-    @Binding var theme2Purchased: Bool;
-    @Binding var theme3Purchased: Bool;
+    @Binding var theme1Purchased: Bool
+    @Binding var theme2Purchased: Bool
+    @Binding var theme3Purchased: Bool
     
-    @Binding var theme1PurchaseString: String;
-    @Binding var theme2PurchaseString: String;
-    @Binding var theme3PurchaseString: String;
+    @Binding var theme1PurchaseString: String
+    @Binding var theme2PurchaseString: String
+    @Binding var theme3PurchaseString: String
     
     var body: some View {
         VStack {
@@ -40,7 +40,7 @@ struct ShopView: View {
                 Button {
                     if (credits >= 1000) {
                         theme1PurchaseString = "Purchased!"
-                        theme1Purchased = true;
+                        theme1Purchased = true
                         credits -= 1000
                     } else {
                         theme1PurchaseString = "Not Enough Credits!"
@@ -65,7 +65,7 @@ struct ShopView: View {
                 Button {
                     if (credits >= 2000) {
                         theme2PurchaseString = "Purchased!"
-                        theme2Purchased = true;
+                        theme2Purchased = true
                         credits -= 2000
                     } else {
                         theme2PurchaseString = "Not Enough Credits!"
@@ -90,7 +90,7 @@ struct ShopView: View {
                 Button {
                     if (credits >= 3000) {
                         theme3PurchaseString = "Purchased!"
-                        theme3Purchased = true;
+                        theme3Purchased = true
                         credits -= 3000
                     } else {
                         theme3PurchaseString = "Not Enough Credits!"

@@ -3,17 +3,17 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var themeDefault = true;
-    @State var theme1 = false;
-    @State var theme2 = false;
-    @State var theme3 = false;
+    @State var themeDefault = true
+    @State var theme1 = false
+    @State var theme2 = false
+    @State var theme3 = false
     
-    @Binding var currentState: Bool;
-    @Binding var currentMode: Bool;
+    @Binding var currentState: Bool
+    @Binding var currentMode: Bool
     
-    @Binding var theme1Purchased: Bool;
-    @Binding var theme2Purchased: Bool;
-    @Binding var theme3Purchased: Bool;
+    @Binding var theme1Purchased: Bool
+    @Binding var theme2Purchased: Bool
+    @Binding var theme3Purchased: Bool
     
     var body: some View {
         VStack {
@@ -68,10 +68,10 @@ struct SettingsView: View {
                             .padding( [.top, .leading] )
                         Spacer()
                         Button {
-                            themeDefault = true;
-                            theme1 = false;
-                            theme2 = false;
-                            theme3 = false;
+                            themeDefault = true
+                            theme1 = false
+                            theme2 = false
+                            theme3 = false
                         } label: {
                             Text(themeDefault ? "Selected" : "Use")
                                 .font(.caption)
@@ -87,10 +87,10 @@ struct SettingsView: View {
                             .padding( [.top, .leading] )
                         Spacer()
                         Button {
-                            themeDefault = false;
-                            theme1 = true;
-                            theme2 = false;
-                            theme3 = false;
+                            themeDefault = false
+                            theme1 = true
+                            theme2 = false
+                            theme3 = false
                         } label: {
                             Text(theme1 ? "Selected" : !theme1Purchased ? "Buy in Store": "Use")
                                 .font(.caption)
@@ -106,10 +106,10 @@ struct SettingsView: View {
                             .padding( [.top, .leading] )
                         Spacer()
                         Button {
-                            themeDefault = false;
-                            theme1 = false;
-                            theme2 = true;
-                            theme3 = false;
+                            themeDefault = false
+                            theme1 = false
+                            theme2 = true
+                            theme3 = false
                         } label: {
                             Text(theme2 ? "Selected" : !theme2Purchased ? "Buy in Store": "Use")
                                 .font(.caption)
@@ -125,10 +125,10 @@ struct SettingsView: View {
                             .padding( [.top, .leading] )
                         Spacer()
                         Button {
-                            themeDefault = false;
-                            theme1 = false;
-                            theme2 = false;
-                            theme3 = true;
+                            themeDefault = false
+                            theme1 = false
+                            theme2 = false
+                            theme3 = true
                         } label: {
                             Text(theme3 ? "Selected" : !theme3Purchased ? "Buy in Store": "Use")
                                 .font(.caption)

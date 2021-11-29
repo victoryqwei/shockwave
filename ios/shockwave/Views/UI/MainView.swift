@@ -18,14 +18,17 @@ extension View{
 }
 
 struct MainView: View {
+    @Binding var shockLevel: Double
+    @Binding var vibrateLevel: Double
+    
     @State var sessionText: String = "Start New Session"
     @State var goalText: String = "No Current Goal Set"
     
     @State var sessionStarted = false
     @State var sessionFinished = false
     @State var showTimeSelect = false
-    @State var showSettingsSheet = false;
-    @State var showShopSheet = false;
+    @State var showSettingsSheet = false
+    @State var showShopSheet = false
     
     @State var timeRemaining = 0
     @State var credits = 0
@@ -33,23 +36,21 @@ struct MainView: View {
     @State var minuteInput = 0
     @State var quitCount = 0
     
-    @State var shockLevel: Binding<Double>;
-    @State var vibrateLevel: Binding<Double>;
-    @State var animationOpacity: Double = 0;
+    @State var animationOpacity: Double = 0
     
-    @State var phonePickupCounter = 0;
-    @State var totalTimeSpent = 0;
+    @State var phonePickupCounter = 0
+    @State var totalTimeSpent = 0
     
-    @State var theme1Purchased = false;
-    @State var theme2Purchased = false;
-    @State var theme3Purchased = false;
+    @State var theme1Purchased = false
+    @State var theme2Purchased = false
+    @State var theme3Purchased = false
     
-    @State var theme1PurchaseString = "Purchase";
-    @State var theme2PurchaseString = "Purchase";
-    @State var theme3PurchaseString = "Purchase";
+    @State var theme1PurchaseString = "Purchase"
+    @State var theme2PurchaseString = "Purchase"
+    @State var theme3PurchaseString = "Purchase"
     
-    @State var currentState = true;
-    @State var currentMode = true;
+    @State var currentState = true
+    @State var currentMode = true
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -88,10 +89,10 @@ struct MainView: View {
                     .simultaneousGesture(LongPressGesture().onEnded { _ in
                         if (quitCount == 1) {
                             sessionText = "Start New Session"
-                            sessionFinished = false;
-                            sessionStarted = false;
+                            sessionFinished = false
+                            sessionStarted = false
                             timeRemaining = -1
-                            quitCount = 0;
+                            quitCount = 0
                         }
                     })
                     .simultaneousGesture(TapGesture().onEnded {
@@ -116,9 +117,9 @@ struct MainView: View {
                         if (sessionFinished) {
                             credits += hourInput * 360 + minuteInput * 6
                             totalTimeSpent += hourInput * 3600 + minuteInput * 60
-                            sessionFinished = false;
-                            sessionStarted = false;
-                            quitCount = 0;
+                            sessionFinished = false
+                            sessionStarted = false
+                            quitCount = 0
                             timeRemaining = -1
                             sessionText  = "Start New Session"
                         }
@@ -178,7 +179,7 @@ struct MainView: View {
                             .padding(.top)
                         HStack {
                             Button {
-                                showTimeSelect.toggle();
+                                showTimeSelect.toggle()
                                 withAnimation {
                                     animationOpacity -= 1
                                 }
@@ -189,8 +190,8 @@ struct MainView: View {
                             }
                             
                             Button {
-                                showTimeSelect.toggle();
-                                sessionStarted = true;
+                                showTimeSelect.toggle()
+                                sessionStarted = true
                                 sessionText = "Current Session"
                                 goalText = "Current Goal: \(timeConvert(secs: (hourInput * 3600 + minuteInput * 60)))"
                                 timeRemaining = hourInput * 3600 + minuteInput * 60
@@ -217,7 +218,7 @@ struct MainView: View {
                         if timeRemaining > 0 {
                             timeRemaining -= 1
                         } else if timeRemaining == 0 {
-                            sessionFinished = true;
+                            sessionFinished = true
                             sessionText = "Session Finished: Click for Credits!"
                         }
                     }
@@ -226,20 +227,19 @@ struct MainView: View {
             
             Text(!currentState ? "Enable Collar in Settings" : currentMode ? "Shock Level" : "Vibration Level")
             if currentMode {
-                Slider(value: shockLevel, in: 1...8, step: 1) // Change step by how many levels of shock we have
+                Slider(value: $shockLevel, in: 1...8, step: 1) // Change step by how many levels of shock we have
                     .padding([.leading, .bottom, .trailing])
                     .opacity(currentState ? 1 : 0.25)
-                    .disabled(!currentState);
+                    .disabled(!currentState)
             } else {
-                Slider(value: vibrateLevel, in: 1...8, step: 1) // Change step by how many levels of shock we have
+                Slider(value: $vibrateLevel, in: 1...8, step: 1) // Change step by how many levels of shock we have
                     .padding([.leading, .bottom, .trailing])
                     .opacity(currentState ? 1 : 0.25)
-                    .disabled(!currentState);
+                    .disabled(!currentState)
             }
-            
             HStack {
                 Button {
-                    showSettingsSheet.toggle();
+                    showSettingsSheet.toggle()
                 } label: {
                     Text("Settings")
                         .padding( [.leading, .bottom] )
