@@ -18,6 +18,9 @@ extension View{
 }
 
 struct MainView: View {
+    @Binding var phonePickupCounter: Int
+    @Binding var currentState: Bool
+    @Binding var currentMode: Bool
     @Binding var shockLevel: Double
     @Binding var vibrateLevel: Double
     
@@ -38,7 +41,6 @@ struct MainView: View {
     
     @State var animationOpacity: Double = 0
     
-    @State var phonePickupCounter = 0
     @State var totalTimeSpent = 0
     
     @State var theme1Purchased = false
@@ -48,9 +50,6 @@ struct MainView: View {
     @State var theme1PurchaseString = "Purchase"
     @State var theme2PurchaseString = "Purchase"
     @State var theme3PurchaseString = "Purchase"
-    
-    @State var currentState = true
-    @State var currentMode = true
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     

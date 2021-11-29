@@ -31,7 +31,7 @@ struct DeviceView: View {
     @ViewBuilder
     private func content() -> some View {
         if viewModel.isReady {
-            MainView(shockLevel: $viewModel.state.shockLevel, vibrateLevel: $viewModel.state.vibrateLevel)
+            MainView(phonePickupCounter: $viewModel.state.counter, currentState: $viewModel.state.isOn, currentMode: $viewModel.state.mode, shockLevel: $viewModel.state.shockLevel, vibrateLevel: $viewModel.state.vibrateLevel)
         }
         else {
             Text("Not connected...")

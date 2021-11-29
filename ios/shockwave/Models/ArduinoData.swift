@@ -5,8 +5,15 @@ import CoreGraphics
 import UniformTypeIdentifiers
 
 struct ArduinoData {
-    static func modeData(mode: Mode) -> Data {
-        let output = mode.rawValue + mode.rawValue
+    static func counterData(counter: Int, isOn: Bool, mode: Bool) -> Data {
+        var output = ""
+        if isOn {
+            if mode {
+                output = "ss"
+            } else {
+                output = "vv"
+            }
+        }
         return output.data(using: .utf8)!
     }
     
@@ -35,25 +42,6 @@ struct ArduinoData {
 //        state.vibrateLevel = Double(String(values[2]).suffix(1))!
         
         return state
-    }
-}
-
-extension ArduinoData {
-    enum Mode: String, CaseIterable {
-        case off = ""
-        case shock = "s"
-        case vibrate = "v"
-        
-        var title: String {
-            switch self {
-            case .off:
-                return "Off"
-            case .shock:
-                return "Shock"
-            case .vibrate:
-                return "Vibrate"
-            }
-        }
     }
 }
 

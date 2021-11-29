@@ -4,9 +4,11 @@ import Foundation
 import CoreGraphics
 
 final class ArduinoState: ObservableObject {
-    @Published var mode = ArduinoData.Mode(rawValue: "")
-    @Published var shockLevel: Double = 1;
-    @Published var vibrateLevel: Double = 1;
+    @Published var counter = 0
+    @Published var isOn = true
+    @Published var mode = true
+    @Published var shockLevel: Double = 1
+    @Published var vibrateLevel: Double = 1
 }
 
 //    @Published var isOn = false
