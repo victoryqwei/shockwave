@@ -48,7 +48,7 @@ struct DeviceView: View {
 //                    Text("\(viewModel.state.vibrateLevel)")
 //                }
 //            }
-            SwiftUIView(shockLevel: $viewModel.state.shockLevel, vibrateLevel: $viewModel.state.vibrateLevel)
+            MainView(shockLevel: $viewModel.state.shockLevel, vibrateLevel: $viewModel.state.vibrateLevel)
         }
         else {
             Text("Not connected...")

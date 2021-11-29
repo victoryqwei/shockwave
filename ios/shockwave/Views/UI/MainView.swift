@@ -17,11 +17,7 @@ extension View{
     }
 }
 
-
-
-
-
-struct SwiftUIView: View {
+struct MainView: View {
     @State var sessionText: String = "Start New Session"
     @State var goalText: String = "No Current Goal Set"
     
